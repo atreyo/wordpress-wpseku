@@ -1,0 +1,13 @@
+version: '2'
+services:
+ web:
+    build:
+      context: .
+      dockerfile: python-dockerfile
+    image: atreyo/python2
+    volumes:
+        - ./code:/usr/src/myapp
+    working_dir: /usr/src/myapp
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
